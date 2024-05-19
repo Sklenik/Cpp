@@ -1,20 +1,20 @@
 #include <iostream>
 
 // TODO find out why I cant declare strings, do the functions need to be declared before main ?
-void printNum(int inputNumber, int msgType) {
+void printNum(int inputNumber, int msgType = 0) {
     switch (msgType)
     {
-    case 1:
+    case 0:
         std::cout << "The number is: ";
         std::cout << inputNumber << std::endl;
         break;
 
-    case 2:
+    case 1:
         std::cout << "The number is something else" << std::endl;
         break;
     
     default:
-        std::cout << "You forgot to define the msgType parameter" << std::endl;
+        std::cout << "Wrong msgType parameter" << std::endl;
         break;
     }
 }
@@ -23,24 +23,29 @@ int main()
 {
     // Trying out the basic stuff
 
-    int a, b;
+    int a = 4, b = 2;
 
-    a = 2;
-    // b = 2;
-    
     int sum = a + b;
     int diff  = a - b;
     int product = a * b;
     int quotient = a / b;
     int remainder = a % b;
 
+    printNum(sum);
+    printNum(diff);
+    printNum(product);
+    printNum(quotient);
+    printNum(remainder);
+
     if (a == 1) {
-        printNum(a, 1);
+        printNum(a);
     }
     else
     {
-        printNum(a, 2);
+        printNum(a, 1);
     }
+
+    printNum(a);
 
     return 0;
 }
